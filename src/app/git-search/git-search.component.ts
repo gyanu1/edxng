@@ -17,8 +17,8 @@ export class GitSearchComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.searchQuery = params.get('query')
       this.searchQuery = params.get('query');
+      this.displayQuery = params.get('query');
       this.gitSearch();
     })
 
