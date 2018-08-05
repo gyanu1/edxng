@@ -1,8 +1,13 @@
-<h1>
-    Welcome to the Angular Fundamentals Git Search!
-  </h1>
-  <nav>
-    <a routerLink="/search" routerLinkActive="active" class="btn btn-primary">
-      Search For Repositories
-    </a>
-  </nav>
+
+  <mat-toolbar color = "primary">
+    <mat-toolbar-row>
+      <h1>
+        Welcome to the Angular Fundamentals Git Search!
+      </h1>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="button-row mt-1">
+          <a routerLink="/search" routerLinkActive="active" mat-raised-button color = "primary">
+            Search For Repositories
+          </a>
+  </div>
