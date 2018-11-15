@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { GitSearchService } from '../git-search.service';
 import { GitSearch } from '../git-search';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
@@ -41,4 +41,9 @@ export class GitSearchComponent implements OnInit {
       this.router.navigate(['/search/' + this.searchQuery]);
     }
   }
+
+  // @HostListener('click', ['$event'])
+  // onHostClick(event: Event) {
+  //  alert("click");
+  // }
 }

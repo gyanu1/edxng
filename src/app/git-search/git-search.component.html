@@ -1,17 +1,35 @@
 <div class="container-fluid">
 <div class="row">
     <mat-toolbar color="primary">
-        <mat-toolbar-row>
+        <mat-toolbar-row >
             <h3 >{{title}} - {{displayQuery}}</h3>
         </mat-toolbar-row>
-        <mat-toolbar-row >
-            <input name="query" placeholder="Enter Search Here"  [(ngModel)]="searchQuery" class="form-control col-sm-9 pull-left"/>
-            <button (click)="sendQuery()" mat-raised-button color="primary">Submit</button>
+        <mat-toolbar-row>
+            <input name="query" placeholder="Enter Search Here"  [(ngModel)]="searchQuery" class="form-control flex pull-left"/>
+            <button (click)="sendQuery()" class="offset-sm-1 flex-30" mat-raised-button >Submit</button>
         </mat-toolbar-row>
     </mat-toolbar>
 
 <div *ngIf="searchResults; else elseBlock" class="col-sm-12">
   <h3 class="total col-sm-12 text-success">Total Results: {{searchResults.total_count}}</h3>
+  <!-- <mat-list role="list" class="list col-sm-12">
+    <mat-list-item role="listitem" class="list_item" [ngStyle]="{'background-color' : (i % 2 === 0) ? 'silver' : 'white'}" *ngFor="let result of searchResults.items;index as i">
+      <div layout="row">
+        <div class="flex-30">
+            <a [href]="result.html_url">
+                <img class="avatar" [src]="result.owner.avatar_url" /> 
+                <h4 class="title"> {{result.name}} 
+                  <small> by {{result.owner.login | uppercase}}</small> 
+                </h4>
+              </a> 
+        </div>
+        <div class="flex-70">
+            <p class="description"> {{result.description}}</p> 
+            <p>Created On: {{result.created_at | date: 'fullDate'}}</p>
+        </div>
+      </div>  
+    </mat-list-item>
+  </mat-list> -->
   <ul class="list col-sm-12">
     <li class="list_item" [ngStyle]="{'background-color' : (i % 2 === 0) ? 'silver' : 'white'}" *ngFor="let result of searchResults.items;index as i">
       <a [href]="result.html_url">
