@@ -1,0 +1,32 @@
+app-bar-chart {
+    #bar-chart{
+        height: inherit;
+        width: inherit;
+        .bar {
+            fill: steelblue;
+        }
+        
+        .bar:hover {
+            fill: brown;
+        }
+        
+        .axis--x path {
+            display: none;
+        }
+
+        line#limit {
+            stroke: #FED966;
+            stroke-width: 3;
+            stroke-dasharray: 3 6;
+        }
+        
+        .grid path {
+            stroke-width: 3;
+        }
+        
+        .grid .tick line {
+            stroke: #9FAAAE;
+            stroke-opacity: 0.2;
+        }
+    }
+}

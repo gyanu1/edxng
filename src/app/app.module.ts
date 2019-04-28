@@ -48,14 +48,14 @@ import {
 import { GitSearchComponent } from './git-search/git-search.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 const appRoutes: Routes = [
   {path:'', component: HomePageComponent},
   {path: 'search', redirectTo: '/search/angular', pathMatch: 'full'},
   {path: 'search/:query', component: GitSearchComponent,data: {
     title: 'Git Search'
-  }},
-  {path: '**', component: NotFoundComponent}
+  }}
 ]
 
 @NgModule({
@@ -63,7 +63,8 @@ const appRoutes: Routes = [
     AppComponent,
     GitSearchComponent,
     HomePageComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    BarChartComponent
   ],
   imports: [
     BrowserModule,
